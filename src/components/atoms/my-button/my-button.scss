@@ -1,0 +1,59 @@
+$types: (
+  'primary': '#042940',
+  'danger': '#9FC131',
+  'success': '#005C53'
+);
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color .5s;
+  margin: 5px;
+
+  @each $name,
+  $color in $types {
+    &--#{$name} {
+      background-color: #{$color};
+    }
+
+    &--solid-#{$name} {
+      background-color: #{$color};
+      color: white;
+      border: 1px solid #{$color};
+    }
+
+    &--dashed-#{$name} {
+      background-color: #fff;
+      color: #{$color};
+      border: 1px dashed #{$color};
+    }
+
+    &--void-#{$name} {
+      background-color: #fff;
+      border: 1px solid #{$color};
+      color: #{$color};
+    }
+
+    &:hover {
+      filter: brightness(0.85);
+    }
+  }
+
+  &--small {
+    width: 3rem;
+    height: 1rem;
+    font-size: 6px;
+  }
+
+  &--medium {
+    width: 7rem;
+    height: 3rem;
+  }
+
+  &--large {
+    width: 10rem;
+    height: 7rem;
+  }
+}
