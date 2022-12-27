@@ -8,7 +8,7 @@ export class Image implements ComponentInterface {
   @Prop() public url: string;
   render() {
     return (
-      <img class='image center' src={this.url} alt='photo'/>
+      <img class='image' src={this.url} alt='photo'/>
     )
   }
 }
